@@ -22,18 +22,13 @@ const LeftSidebar = () => {
 
   return (
     <nav className="leftsidebar border-2 border-black border-r-gray-800 ">
-      <div className="flex flex-col gap-8">
-        <Link to="/" className="flex gap-3 items-center">
-          {/* <h1 className="text-[25px] font-bold tracking-tighter ml-12">
-            Prismify
-          </h1> */}
-          <img src="/assets/Images/title-black.png" alt="logo" width={250} />
-          {/* <img
-          src="/assets/Images/logo.svg"
-          alt="logo"
-          width={150}
-          height={36}
-        /> */}
+      <div className="flex flex-col gap-5">
+        <Link to="/" className="flex items-center">
+          <img
+            src="/assets/Images/logondtextblack.png"
+            alt="logo"
+            width={200}
+          />
         </Link>
 
         <Link to={`/profile/${user.id}`} className="flex gap-3 items-center">
