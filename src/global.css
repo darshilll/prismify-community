@@ -261,7 +261,7 @@
   }
   /* Popular card */
   .popular-card {
-    @apply flex-center gap-4 border border-[#6f6866] rounded-[20px] px-5 py-5 overflow-hidden;
+    @apply flex-center flex-col gap-5 border border border-[#6f6866] rounded-[10px] px-6 py-5 ;
   }
 }
 
