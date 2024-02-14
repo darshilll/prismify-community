@@ -84,7 +84,7 @@ const SigninForm = () => {
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="shad-form_message"/>
               </FormItem>
             )}
           />
@@ -103,7 +103,7 @@ const SigninForm = () => {
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="shad-form_message"/>
               </FormItem>
             )}
           />

@@ -1,8 +1,6 @@
 import * as z from "zod";
 
 
-
-
 export const SignupValidation = z.object({
   name: z.string().min(2, { message: "Enter the name" }),
   username: z.string().min(2, { message: "Enter the username" }),

@@ -9,6 +9,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
@@ -86,21 +87,6 @@ const PostForm = ({ post, action }: PostFormProps) => {
       >
         <FormField
           control={form.control}
-          name="file"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="shad-form_label">Add photos</FormLabel>
-              <FormControl>
-                <FileUploader
-                  fieldChange={field.onChange}
-                  mediaUrl={post?.imageUrl}
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
           name="caption"
           render={({ field }) => (
             <FormItem>
@@ -110,6 +96,22 @@ const PostForm = ({ post, action }: PostFormProps) => {
                   className="shad-textarea custom-scrollbar  bg-[#363636]"
                   placeholder="Write a caption..."
                   {...field}
+                />
+              </FormControl>
+              <FormMessage className="shad-form_message" />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="file"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="shad-form_label">Add photos</FormLabel>
+              <FormControl>
+                <FileUploader
+                  fieldChange={field.onChange}
+                  mediaUrl={post?.imageUrl}
                 />
               </FormControl>
             </FormItem>
@@ -137,7 +139,9 @@ const PostForm = ({ post, action }: PostFormProps) => {
           name="tags"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="shad-form_label">Add hashtag</FormLabel>
+              <FormLabel className="shad-form_label">
+                Add hashtag (separated by comma " , ")
+              </FormLabel>
               <FormControl>
                 <Input
                   type="text"
@@ -146,6 +150,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
                   {...field}
                 />
               </FormControl>
+              <FormMessage className="shad-form_message" />
             </FormItem>
           )}
         />

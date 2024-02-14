@@ -22,8 +22,8 @@ const App = () => {
       <Routes>
         {/* Public Route */}
         <Route element={<AuthLayout />}>
-          <Route path="/sign-in" element={<SigninForm />} />
           <Route path="/sign-up" element={<SignupForm />} />
+          <Route path="/sign-in" element={<SigninForm />} />
         </Route>
         {/* Private Route */}
         <Route element={<RootLayout />}>
