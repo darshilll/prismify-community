@@ -9,7 +9,6 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
@@ -23,6 +22,7 @@ import {
   useCreatePost,
   useUpdatePost,
 } from "@/lib/react-query/queriesAndMutation";
+import Loader from "../shared/Loader";
 // import { updatePost } from "@/lib/appWrite/api";
 
 type PostFormProps = {
@@ -122,8 +122,12 @@ const PostForm = ({ post, action }: PostFormProps) => {
             <FormItem>
               <FormLabel className="shad-form_label">Add location</FormLabel>
               <FormControl>
-                <Input type="text" className="shad-input"
-                placeholder="" {...field} />
+                <Input
+                  type="text"
+                  className="shad-input"
+                  placeholder=""
+                  {...field}
+                />
               </FormControl>
             </FormItem>
           )}
@@ -141,9 +145,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
                   placeholder=""
                   {...field}
                 />
-                
               </FormControl>
-              
             </FormItem>
           )}
         />
@@ -161,7 +163,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
             className="shad-button_primary whitespace-nowrap"
             disabled={isLoadingCreate || isLoadingUpdate}
           >
-            {isLoadingCreate || (isLoadingUpdate && "Loading...")}
+            {(isLoadingCreate || isLoadingUpdate) && <Loader />}
             {action} post
           </Button>
         </div>

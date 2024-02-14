@@ -48,7 +48,7 @@ const PostDetails = () => {
             width={24}
             height={24}
           />
-          <p className="small-medium lg:base-medium">Back</p>
+          <p className="text-[20px] -ml-2">Back</p>
         </Button>
       </div>
       {isPending ? (
@@ -104,9 +104,7 @@ const PostDetails = () => {
                 <Button
                   onClick={handleDeletePost}
                   variant="ghost"
-                  className={`${
-                    user.id !== post?.creator.$id && "hidden"
-                  }`}
+                  className={`${user.id !== post?.creator.$id && "hidden"}`}
                 >
                   <img
                     src="/assets/Icons/delete.svg"

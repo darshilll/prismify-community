@@ -39,13 +39,15 @@ const Home = () => {
             <h3 className="h3-bold text-light-1"></h3>
             <>
               <h3>Top Creators</h3>
-              <ul className="grid 2xl:grid-cols-2 gap-6">
-                {creators?.documents.map((creator) => (
-                  <li key={creator?.$id}>
-                    <PopularCard user={creator} />
-                  </li>
-                ))}
-              </ul>
+              <div className="">
+                <ul>
+                  {creators?.documents.map((creator) => (
+                    <li key={creator?.$id} className="">
+                      <PopularCard user={creator} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </>
           </div>
         </div>

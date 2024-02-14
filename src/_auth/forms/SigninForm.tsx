@@ -64,7 +64,7 @@ const SigninForm = () => {
       >
         {/* <h1 className="h1-bold">prismify</h1> */}
         <img src="/assets/Images/logondtext.png" alt="logo" width={230} />
-        <h1 className="text-2xl  text-[#adb5b1] font-sans ">Welcome back!</h1>
+        <h1 className="text-2xl  text-[#adb5b1] font-sans">Welcome back!</h1>
 
         <form
           onSubmit={form.handleSubmit(onSubmit)}

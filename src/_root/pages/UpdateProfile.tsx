@@ -81,7 +81,22 @@ const UpdateProfile = () => {
   return (
     <div className="flex flex-1">
       <div className="common-container">
-        <div className="flex-start gap-3 justify-start w-full max-w-5xl">
+        <div className="hidden md:flex max-w-5xl w-full -mt-5 -ml-5">
+          <Button
+            onClick={() => navigate(-1)}
+            variant="ghost"
+            className="shad-button_ghost"
+          >
+            <img
+              src={"/assets/Icons/back.svg"}
+              alt="back"
+              width={24}
+              height={24}
+            />
+            <p className="text-[20px] -ml-2">Back</p>
+          </Button>
+        </div>
+        <div className="flex-start gap-3 justify-start w-full max-w-5xl -mt-4">
           <img
             src="/assets/Icons/edit.svg"
             width={25}
@@ -89,13 +104,15 @@ const UpdateProfile = () => {
             alt="edit"
             className="invert-white"
           />
-          <h2 className="xl:text-left xl:text-[20px] md:h2-bold text-left w-full">Edit Profile</h2>
+          <h2 className="xl:text-left lg:text-left xl:text-[20px] md:h2-bold w-full">
+            Edit Profile
+          </h2>
         </div>
 
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleUpdate)}
-            className="flex flex-col gap-7 w-full mt-4 max-w-5xl"
+            className="flex flex-col gap-7 w-full max-w-5xl"
           >
             <FormField
               control={form.control}

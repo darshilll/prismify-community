@@ -86,13 +86,13 @@ const SignupForm = () => {
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col ">
         <img src="/assets/Images/logondtext.png" alt="logo" width={230} />
-        <h2 className="prismify  p-4 -mt-3">
+        <h2 className="prismify p-4 -mt-4">
           Sign up to see photos and videos from your friends.
         </h2>
 
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col gap-5 xl:w-80 mt-4 w-64"
+          className="flex flex-col gap-5 xl:w-80 w-64"
         >
           <FormField
             control={form.control}
