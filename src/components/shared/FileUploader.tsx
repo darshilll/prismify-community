@@ -54,7 +54,7 @@ const FileUploader = ({ fieldChange, mediaUrl}: FileUploaderProps) => {
             Drag photos here
           </h3>
           <p className="text-light-4 small-regular mb-6">SVG, PNG, JPG</p>
-          <Button className="edit-profile">Select from computer</Button>
+          <Button className="select-computer ">Select from computer</Button>
         </div>
       )}
     </div>

@@ -315,4 +315,7 @@
   .edit-profile {
     @apply bg-[#9f31ff] hover:bg-[#262626] hover:border;
   }
+  .select-computer {
+    @apply bg-[#363636] hover:bg-[#262626] hover:border;
+  }
 }
