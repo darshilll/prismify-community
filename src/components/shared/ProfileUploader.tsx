@@ -25,7 +25,12 @@ const ProfileUploader = ({ fieldChange, mediaUrl }: ProfileUploaderProps) => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
-      "image/*": [".png", ".jpeg", ".jpg"],
+      'image/png': ['.png'],
+      'image/jpeg': ['.jpeg'],
+      'image/jpg': ['.jpg'],
+      'image/svg': ['.svg'],
+      'image/heic': ['.heic'],
+      'image/gif': ['.gif'],
     },
   });
 

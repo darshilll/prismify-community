@@ -25,7 +25,13 @@ const FileUploader = ({ fieldChange, mediaUrl}: FileUploaderProps) => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
-      "image/*": [".png", ".jpg", ".jpeg", ".svg"],
+      'image/png': ['.png'],
+      'image/jpeg': ['.jpeg'],
+      'image/jpg': ['.jpg'],
+      'image/svg': ['.svg'],
+      'image/heic': ['.heic'],
+      'image/gif': ['.gif'],
+      
     },
   });
   return (
@@ -53,7 +59,7 @@ const FileUploader = ({ fieldChange, mediaUrl}: FileUploaderProps) => {
           <h3 className="base-medium text-light-2 mb-2 mt-6">
             Drag photos here
           </h3>
-          <p className="text-light-4 small-regular mb-6">SVG, PNG, JPG</p>
+          <p className="text-light-4 small-regular mb-6">PNG, JPG, SVG</p>
           <Button className="select-computer ">Select from computer</Button>
         </div>
       )}
