@@ -35,7 +35,7 @@ const LeftSidebar = () => {
           <img
             src={user.imageUrl || "/assets/Icons/profile-placeholder.svg"}
             alt="profile-pic"
-            className="h-14 w-14 rounded-full"
+            className="h-14 w-14 rounded-full object-cover"
           />
           <div className="flex flex-col">
             <p className=" font-semibold tracking-wider">{user.name}</p>
