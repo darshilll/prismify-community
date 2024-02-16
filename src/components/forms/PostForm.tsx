@@ -75,7 +75,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
     });
 
     if (!newPost) {
-      toast({ title: "Please try again" });
+      toast({ title: "n" });
     }
     navigate("/");
   }
