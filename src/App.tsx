@@ -15,10 +15,12 @@ import EditPost from "./_root/pages/EditPost";
 import PostDetails from "./_root/pages/PostDetails";
 import Profile from "./_root/pages/Profile";
 import UpdateProfile from "./_root/pages/UpdateProfile";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
-    <main>
+    <main className="flex h-screen">
+      <ScrollToTop />
       <Routes>
         {/* Public Route */}
         <Route element={<AuthLayout />}>
@@ -29,7 +31,7 @@ const App = () => {
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="/explore" element={<Explore />} />
-          <Route path="/saved" element={<Saved/>} />
+          <Route path="/saved" element={<Saved />} />
           <Route path="/all-users" element={<AllUsers />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/update-post/:id" element={<EditPost />} />

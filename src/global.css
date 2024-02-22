@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-dark-1 text-text-color min-h-screen font-inter;
+    @apply bg-black text-white min-h-screen font-inter;
   }
 }
 
@@ -117,7 +117,7 @@
   }
 
   .common-container {
-    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-14 lg:p-14 custom-scrollbar xl:ml-72 lg:ml-60 md:ml-64;
+    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-14 lg:p-14 custom-scrollbar;
   }
 
   /* All Users */
@@ -131,8 +131,7 @@
 
   /* Explore */
   .explore-container {
-    @apply flex flex-col flex-1 items-center overflow-scroll py-10 px-5 md:p-14 custom-scrollbar xl:ml-72
-    lg:ml-72 md:ml-72;
+    @apply flex flex-col flex-1 items-center overflow-scroll py-10 px-5 md:p-14 custom-scrollbar;
   }
 
   .explore-inner_container {
@@ -145,13 +144,12 @@
 
   /* Home */
   .home-container {
-    @apply flex flex-1 gap-12 overflow-scroll md:px-8 lg:p-8 custom-scrollbar xl:ml-[30rem]
-    lg:ml-72
-    md:ml-72;
+    @apply flex flex-1 gap-12 overflow-scroll md:px-8 lg:p-8  
+    custom-scrollbar;
   }
 
   .home-posts {
-    @apply max-w-screen-sm flex flex-col items-center gap-6 md:gap-9;
+    @apply max-w-screen-sm w-full flex flex-col items-center gap-6 md:gap-9;
   }
 
   .home-creators {
@@ -234,7 +232,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-7 flex-col justify-between w-[270px] bg-dark-2 h-screen fixed top-0 left-0;
+    @apply hidden md:flex px-6 py-7 flex-col justify-between min-w-[270px] bg-dark-2;
   }
 
   .leftsidebar-link {
@@ -247,7 +245,7 @@
   }
 
   .post-card_img {
-    @apply h-[16rem] xs:h-[400px] lg:h-[450px] w-full rounded-lg object-contain mb-5 ;
+    @apply h-[16rem] xs:h-[400px] lg:h-[450px] w-full rounded-lg object-contain mb-5;
   }
 
   /* Topbar */
@@ -257,11 +255,11 @@
 
   /* User card */
   .user-card {
-    @apply flex-center flex-col gap-4 border border border-[#6f6866] rounded-[20px] px-6 py-10;
+    @apply flex-center flex-col gap-4 border  border-[#6f6866] rounded-[20px] px-6 py-10;
   }
   /* Popular card */
   .popular-card {
-    @apply flex-center flex-col gap-5 border border border-[#6f6866] rounded-[10px] px-6 py-5 ;
+    @apply flex-center flex-col gap-5 border border border-[#6f6866] rounded-[10px] px-6 py-5;
   }
 }
 

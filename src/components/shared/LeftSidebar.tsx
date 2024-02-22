@@ -22,7 +22,7 @@ const LeftSidebar = () => {
 
   return (
     <nav className="leftsidebar border-2 border-black border-r-gray-800 ">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-11">
         <Link to="/" className="flex items-center">
           <img
             src="/assets/Images/logondtextblack.png"

@@ -2,6 +2,7 @@
 import Loader from "@/components/shared/Loader";
 import PopularCard from "@/components/shared/PopularCard";
 import PostCard from "@/components/shared/PostCard";
+import UserCard from "@/components/shared/UserCard";
 import {
   useGetRecentPosts,
   useGetUsers,
@@ -12,45 +13,60 @@ const Home = () => {
   const {
     data: posts,
     isPending: isPostLoading,
-    // isError: isErrorPosts,
+    isError: isErrorPosts,
   } = useGetRecentPosts();
 
   const {
     data: creators,
-    // isError: isErrorCreators,
+    isError: isErrorCreators,
+    isLoading: isUserLoading,
   } = useGetUsers(10);
 
-  return (
-    <div className="flex items-center flex-1 flex-col justify-around p-3">
-      {isPostLoading && !posts ? (
-        <div className="w-full h-full mt-20">
-          <Loader />
-        </div>
-      ) : (
+  if (isErrorPosts || isErrorCreators) {
+    return (
+      <div className="flex flex-1">
         <div className="home-container">
-          <div className="home-posts">
-            <ul className="flex flex-col flex-1 gap-9 w-full">
-              {posts?.documents.map((posts: Models.Document) => (
-                <PostCard post={posts} key={posts.caption} />
+          <p className="body-medium text-light-1">Something bad happened</p>
+        </div>
+        <div className="home-creators">
+          <p className="body-medium text-light-1">Something bad happened</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-1">
+      <div className="home-container h-screen">
+        <div className="home-posts">
+          {isPostLoading && !posts ? (
+            <Loader />
+          ) : (
+            <ul className="flex flex-col flex-1 gap-9 w-full ">
+              {posts?.documents.map((post: Models.Document) => (
+                <li key={post.$id} className="flex justify-center w-full">
+                  <PostCard post={post} />
+                </li>
               ))}
             </ul>
-          </div>
-          <div className="home-creators">
-            <h3 className="h3-bold text-light-1"></h3>
-            <>
-              <h3>Top Creators</h3>
-
-              <ul className="grid 2xl:grid-cols-2 gap-6">
-                {creators?.documents.map((creator) => (
-                  <li key={creator?.$id} className="">
-                    <PopularCard user={creator} />
-                  </li>
-                ))}
-              </ul>
-            </>
-          </div>
+          )}
         </div>
-      )}
+      </div>
+
+      <div className="home-creators h-screen">
+        <h3 className="h3-bold text-light-1">Top Creators</h3>
+        {isUserLoading && !creators ? (
+          <Loader />
+        ) : (
+          <ul className="grid 2xl:grid-cols-2 gap-6">
+            {creators?.documents.map((creator) => (
+              <li key={creator?.$id}>
+                <UserCard user={creator} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
