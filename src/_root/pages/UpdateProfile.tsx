@@ -81,21 +81,7 @@ const UpdateProfile = () => {
   return (
     <div className="flex flex-1">
       <div className="common-container h-screen">
-        <div className="hidden md:flex max-w-5xl w-full -mt-5 -ml-5">
-          {/* <Button
-            onClick={() => navigate(-1)}
-            variant="ghost"
-            className="shad-button_ghost"
-          >
-            <img
-              src={"/assets/Icons/back.svg"}
-              alt="back"
-              width={24}
-              height={24}
-            />
-            <p className="text-[20px] -ml-2">Back</p>
-          </Button> */}
-        </div>
+        <div className="hidden md:flex max-w-5xl w-full -mt-5 -ml-5"></div>
         <div className="gap-3 flex-start justify-start w-full max-w-5xl -mt-4">
           <img
             src="/assets/Icons/edit.svg"
