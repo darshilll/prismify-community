@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-black text-white min-h-screen font-inter;
+    @apply bg-[#191612] text-white min-h-screen font-inter;
   }
 }
 
@@ -117,7 +117,7 @@
   }
 
   .common-container {
-    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-14 lg:p-14 custom-scrollbar;
+    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-14 lg:p-14 custom-scrollbar h-screen;
   }
 
   /* All Users */
@@ -178,9 +178,7 @@
 
   /* Profile */
   .profile-container {
-    @apply flex flex-col items-center flex-1 gap-10 overflow-scroll py-10 px-5 md:p-14 custom-scrollbar xl:ml-72
-    lg:ml-72
-    md:ml-72;
+    @apply flex flex-col items-center flex-1 gap-10 overflow-scroll py-10 px-5 md:p-14 custom-scrollbar h-screen;
   }
 
   .profile-inner_container {
@@ -193,9 +191,7 @@
 
   /* Saved */
   .saved-container {
-    @apply flex flex-col flex-1 items-center gap-10  py-10 px-5 md:p-14 custom-scrollbar xl:ml-72
-    lg:ml-72
-    md:ml-72;
+    @apply flex flex-col flex-1 items-center gap-10 py-10 px-5 md:p-14 custom-scrollbar overflow-scroll h-screen;
   }
 
   /* Bottom bar */

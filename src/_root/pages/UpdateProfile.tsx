@@ -80,7 +80,7 @@ const UpdateProfile = () => {
 
   return (
     <div className="flex flex-1">
-      <div className="common-container">
+      <div className="common-container h-screen">
         <div className="hidden md:flex max-w-5xl w-full -mt-5 -ml-5">
           <Button
             onClick={() => navigate(-1)}
