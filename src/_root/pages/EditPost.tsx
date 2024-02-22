@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import PostForm from "@/components/forms/PostForm";
 import Loader from "@/components/shared/Loader";
-
 import { useGetPostById } from "@/lib/react-query/queriesAndMutation";
 import { useParams } from "react-router-dom";
 

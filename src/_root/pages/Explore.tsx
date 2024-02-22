@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
