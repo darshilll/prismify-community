@@ -48,7 +48,7 @@ const PostDetails = () => {
             width={24}
             height={24}
           />
-          <p className="text-[20px] -ml-2">Back</p>
+          <p className="text-[20px] -ml-2 font-bold">Back</p>
         </Button>
       </div>
       {isPending ? (
@@ -117,7 +117,7 @@ const PostDetails = () => {
               </div>
             </div>
 
-            <hr className="border w-full border-dark-4/80" />
+            <hr className="border w-full border-border-color/80" />
 
             <div className="flex flex-col flex-1 w-full small-medium lg:base-regular">
               <p>{post?.caption}</p>
@@ -136,7 +136,7 @@ const PostDetails = () => {
         </div>
       )}
       <div className="w-full max-w-5xl">
-        <hr className="border w-full border-dark-4/80" />
+        <hr className="border w-full border-border-color/80" />
 
         <h3 className="body-bold md:h3-bold w-full my-10">
           More Related Posts

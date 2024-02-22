@@ -82,7 +82,7 @@ const UpdateProfile = () => {
     <div className="flex flex-1">
       <div className="common-container h-screen">
         <div className="hidden md:flex max-w-5xl w-full -mt-5 -ml-5">
-          <Button
+          {/* <Button
             onClick={() => navigate(-1)}
             variant="ghost"
             className="shad-button_ghost"
@@ -94,17 +94,17 @@ const UpdateProfile = () => {
               height={24}
             />
             <p className="text-[20px] -ml-2">Back</p>
-          </Button>
+          </Button> */}
         </div>
-        <div className="flex-start gap-3 justify-start w-full max-w-5xl -mt-4">
+        <div className="gap-3 flex-start justify-start w-full max-w-5xl -mt-4">
           <img
             src="/assets/Icons/edit.svg"
             width={25}
             height={25}
             alt="edit"
-            className="invert-white"
+            className="invert-white "
           />
-          <h2 className="xl:text-left lg:text-left xl:text-[20px] md:h2-bold w-full">
+          <h2 className="xl:h2-bold-size  lg:text-left  md:h2-bold w-full">
             Edit Profile
           </h2>
         </div>

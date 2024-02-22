@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import PostForm from "@/components/forms/PostForm";
 import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
 import { useGetPostById } from "@/lib/react-query/queriesAndMutation";
-import {useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditPost = () => {
   const { id } = useParams();
@@ -16,24 +17,23 @@ const EditPost = () => {
       </div>
     );
   return (
-    
     <div className="flex flex-1">
       <div className="common-container">
-      <div className="hidden md:flex max-w-5xl w-full -mt-5 -ml-5">
-        <Button
-          onClick={() => navigate(-1)}
-          variant="ghost"
-          className="shad-button_ghost"
-        >
-          <img
-            src={"/assets/Icons/back.svg"}
-            alt="back"
-            width={24}
-            height={24}
-          />
-          <p className="text-[20px] -ml-2">Back</p>
-        </Button>
-      </div>
+        <div className="hidden md:flex max-w-5xl w-full -mt-8 -ml-5">
+          {/* <Button
+            onClick={() => navigate(-1)}
+            variant="ghost"
+            className="shad-button_ghost"
+          >
+            <img
+              src={"/assets/Icons/back.svg"}
+              alt="back"
+              width={24}
+              height={24}
+            />
+            <p className="text-[20px] -ml-2 font-bold">Back</p>
+          </Button> */}
+        </div>
         <div className="max-w-5xl flex-start gap-3 justify-start w-full -mt-5">
           <img
             src="/assets/Icons/add-post.svg"
@@ -41,7 +41,7 @@ const EditPost = () => {
             height={25}
             alt="add"
           />
-          <h2 className="xl:text-left xl:text-[20px] md:h2-bold text-left w-full">
+          <h2 className="xl:h2-bold-size  md:h2-bold text-left w-full">
             Edit info
           </h2>
         </div>

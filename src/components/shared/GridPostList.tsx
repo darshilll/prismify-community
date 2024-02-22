@@ -24,7 +24,7 @@ const GridPostList = ({
             <img
               src={post.imageUrl}
               alt="postImage"
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover"
             />
           </Link>
           <div className="grid-post_user">

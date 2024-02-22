@@ -11,7 +11,7 @@ const CreatePost = () => {
             height={25}
             alt="add"
           />
-          <h2 className="xl:text-left xl:text-[20px] md:h2-bold text-left w-full">
+          <h2 className="xl:h2-bold-size md:h2-bold text-left font-bold w-full">
             Create post
           </h2>
         </div>

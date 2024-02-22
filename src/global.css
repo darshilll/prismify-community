@@ -29,7 +29,11 @@
   }
 
   .h2-bold {
-    @apply text-[24px] font-semibold leading-[140%] tracking-wide w-full text-left text-light-3;
+    @apply text-[24px] font-semibold leading-[140%] tracking-wide w-full text-left text-white;
+  }
+
+  .h2-bold-size {
+    @apply xl:text-left xl:text-[28px] xl:text-white xl:tracking-tight;
   }
 
   .h2-bold-d {
@@ -37,7 +41,7 @@
   }
 
   .h3-bold {
-    @apply text-[22px] font-bold leading-[140%] tracking-tight font-sans text-white -mt-7;
+    @apply text-[24px] font-bold leading-[140%] tracking-tight font-sans text-white -mt-4;
   }
 
   .base-semibold {
@@ -139,7 +143,7 @@
   }
 
   .explore-search {
-    @apply h-12 bg-dark-4 border-none placeholder:text-light-4 focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
+    @apply h-12 bg-black border-none placeholder:text-light-4 focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
   }
 
   /* Home */
@@ -161,11 +165,11 @@
   }
 
   .post_details-card {
-    @apply bg-dark-2 w-full max-w-5xl rounded-[30px] flex-col flex xl:flex-row border border-dark-4 xl:rounded-l-[24px];
+    @apply bg-dark-2 w-full max-w-5xl rounded-[30px] flex-col flex xl:flex-row border border-border-color xl:rounded-l-[24px];
   }
 
   .post_details-img {
-    @apply lg:h-[450px] xl:w-[50%] rounded-t-[30px] xl:rounded-l-[24px] xl:rounded-tr-none object-contain p-5 bg-dark-1;
+    @apply lg:h-[450px] xl:w-[50%] rounded-t-[30px] xl:rounded-l-[24px] xl:rounded-tr-none object-contain p-5 bg-dark-2;
   }
 
   .post_details-info {
@@ -218,7 +222,7 @@
   }
 
   .grid-post_link {
-    @apply flex rounded-[24px] border border-dark-4 overflow-hidden cursor-pointer w-full h-[400px];
+    @apply flex rounded-[24px] border-[2px] border-border-color overflow-hidden cursor-pointer w-full h-full;
   }
 
   .grid-post_user {
@@ -236,7 +240,7 @@
 
   /* Post Card */
   .post-card {
-    @apply bg-dark-2 rounded-2xl border border-border-color p-5 lg:p-7 w-full;
+    @apply bg-dark-2 rounded-[2rem] border-[1px] border-border-color p-5 lg:p-7 w-full;
   }
 
   .post-card_img {
@@ -250,7 +254,7 @@
 
   /* User card */
   .user-card {
-    @apply flex-center flex-col gap-4 border  border-[#6f6866] rounded-[20px] px-5 py-8;
+    @apply flex-center flex-col gap-4 border  border-border-color rounded-[20px] px-5 py-8;
   }
   /* Popular card */
   .popular-card {

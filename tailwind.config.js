@@ -37,7 +37,7 @@ module.exports = {
         "light-3": "#adb5bd",
         "light-4": "#9999a1",
         "text-color": "#e6e6e9",
-        "border-color": "#6f6866",
+        "border-color": "#1f2937",
       },
       screens: {
         xs: "480px",

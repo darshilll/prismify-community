@@ -20,7 +20,7 @@ const Saved = () => {
     <div className="saved-container">
       <div className="flex gap-2 w-full max-w-5xl ">
         <img src="/assets/Icons/save.svg" alt="save" />
-        <h2 className="xl:text-left xl:text-[20px] md:h2-bold-d text-left w-full">Saved</h2>
+        <h2 className="xl:h2-bold-size md:h2-bold-d text-left w-full">Saved</h2>
       </div>
 
       {!currentUser ? (
