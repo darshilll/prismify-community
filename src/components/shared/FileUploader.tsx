@@ -9,7 +9,7 @@ type FileUploaderProps = {
   mediaUrl: string;
 };
 
-const FileUploader = ({ fieldChange, mediaUrl}: FileUploaderProps) => {
+const FileUploader = ({ fieldChange, mediaUrl }: FileUploaderProps) => {
   const [file, setFile] = useState<File[]>([]);
 
   const [fileUrl, setFileUrl] = useState(mediaUrl);
@@ -25,13 +25,7 @@ const FileUploader = ({ fieldChange, mediaUrl}: FileUploaderProps) => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
-      'image/png': ['.png'],
-      'image/jpeg': ['.jpeg'],
-      'image/jpg': ['.jpg'],
-      'image/svg': ['.svg'],
-      'image/heic': ['.heic'],
-      'image/gif': ['.gif'],
-      
+      "image/*": [".png", ".jpeg", ".jpg", ".svg"],
     },
   });
   return (

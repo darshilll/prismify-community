@@ -124,12 +124,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
             <FormItem>
               <FormLabel className="shad-form_label">Add location</FormLabel>
               <FormControl>
-                <Input
-                  type="text"
-                  className="shad-input"
-                  placeholder=""
-                  {...field}
-                />
+                <Input type="text" className="shad-input" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -158,7 +153,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
         <div className="flex gap-4 items-center justify-end">
           <Button
             type="button"
-            className="text-red bg-black "
+            className="text-red bg-black"
             onClick={() => navigate(-1)}
           >
             Cancel
