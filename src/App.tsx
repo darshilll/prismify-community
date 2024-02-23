@@ -15,11 +15,12 @@ import EditPost from "./_root/pages/EditPost";
 import PostDetails from "./_root/pages/PostDetails";
 import Profile from "./_root/pages/Profile";
 import UpdateProfile from "./_root/pages/UpdateProfile";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
     <main className="flex h-screen">
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
       <Routes>
         {/* Public Route */}
         <Route element={<AuthLayout />}>
