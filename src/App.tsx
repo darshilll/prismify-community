@@ -1,48 +1,58 @@
 import { Routes, Route } from "react-router-dom";
-
-import SigninForm from "./_auth/forms/SigninForm";
-import SignupForm from "./_auth/forms/SignupForm";
-import "./global.css";
-import AuthLayout from "./_auth/AuthLayout";
-import { Home } from "./_root/pages";
-import RootLayout from "./_root/RootLayout";
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
-import Explore from "./_root/pages/Explore";
-import Saved from "./_root/pages/Saved";
-import AllUsers from "./_root/pages/AllUsers";
-import CreatePost from "./_root/pages/CreatePost";
-import EditPost from "./_root/pages/EditPost";
-import PostDetails from "./_root/pages/PostDetails";
-import Profile from "./_root/pages/Profile";
-import UpdateProfile from "./_root/pages/UpdateProfile";
 import ScrollToTop from "./components/ScrollToTop";
+import "./global.css";
+import Loader from "./components/shared/Loader";
+const SigninForm = lazy(() => import("./_auth/forms/SigninForm"));
+const SignupForm = lazy(() => import("./_auth/forms/SignupForm"));
+const AuthLayout = lazy(() => import("./_auth/AuthLayout"));
+const RootLayout = lazy(() => import("./_root/RootLayout"));
+const Home = lazy(() => import("./_root/pages/Home"));
+const Explore = lazy(() => import("./_root/pages/Explore"));
+const Saved = lazy(() => import("./_root/pages/Saved"));
+const CreatePost = lazy(() => import("./_root/pages/CreatePost"));
+const AllUsers = lazy(() => import("./_root/pages/AllUsers"));
+const EditPost = lazy(() => import("./_root/pages/EditPost"));
+const PostDetails = lazy(() => import("./_root/pages/PostDetails"));
+const Profile = lazy(() => import("./_root/pages/Profile"));
+const UpdateProfile = lazy(() => import("./_root/pages/UpdateProfile"));
 
 const App = () => {
   return (
     <main className="flex h-screen">
       <ScrollToTop />
-      <Routes>
-        {/* Public Route */}
-        <Route element={<AuthLayout />}>
-          <Route path="/sign-up" element={<SignupForm />} />
-          <Route path="/sign-in" element={<SigninForm />} />
-        </Route>
-        {/* Private Route */}
-        <Route element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/saved" element={<Saved />} />
-          <Route path="/all-users" element={<AllUsers />} />
-          <Route path="/create-post" element={<CreatePost />} />
-          <Route path="/update-post/:id" element={<EditPost />} />
-          <Route path="/posts/:id" element={<PostDetails />} />
-          <Route path="/profile/:id/*" element={<Profile />} />
-          <Route path="/update-profile/:id" element={<UpdateProfile />} />
-        </Route>
-      </Routes>
+      <Suspense
+        fallback={
+          <div className="flex-center justify-center items-center h-full w-full">
+            <Loader />
+          </div>
+        }
+      >
+        <Routes>
+          {/* public routes */}
+          <Route element={<AuthLayout />}>
+            <Route path="/sign-in" element={<SigninForm />} />
+            <Route path="/sign-up" element={<SignupForm />} />
+          </Route>
 
+          {/* private routes */}
+          <Route element={<RootLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/saved" element={<Saved />} />
+            <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/all-users" element={<AllUsers />} />
+            <Route path="/update-post/:id" element={<EditPost />} />
+            <Route path="/posts/:id" element={<PostDetails />} />
+            <Route path="/profile/:id/*" element={<Profile />} />
+            <Route path="/update-profile/:id/" element={<UpdateProfile />} />
+          </Route>
+        </Routes>
+      </Suspense>
       <Toaster />
     </main>
   );
 };
+
 export default App;
