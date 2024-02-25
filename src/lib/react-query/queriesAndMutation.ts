@@ -27,14 +27,27 @@ import {
   updateUser,
   getUserPosts,
   deleteSavedPost,
+  userVerification,
+  userConfirmation,
 } from "../appWrite/api";
 
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
 
-
 export const useCreateUserAccount = () => {
   return useMutation({
     mutationFn: (user: INewUser) => createUserAccount(user),
+  });
+};
+
+export const useUserVerification = () => {
+  return useMutation({
+    mutationFn: userVerification,
+  });
+};
+
+export const useUserConfirmation = () => {
+  return useMutation({
+    mutationFn: userConfirmation,
   });
 };
 
@@ -53,19 +66,19 @@ export const useSignOutAccount = () => {
 
 export const useGetPosts = () => {
   return useInfiniteQuery({
-  queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
-  queryFn: getInfinitePosts as any,
-  initialPageParam: 0,
-  getNextPageParam: (lastPage: any) => {
-  if (lastPage && lastPage.documents.length === 0) {
-  return null;
-  }
-  
-    const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
-    return lastId;
-  },
+    queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
+    queryFn: getInfinitePosts as any,
+    initialPageParam: 0,
+    getNextPageParam: (lastPage: any) => {
+      if (lastPage && lastPage.documents.length === 0) {
+        return null;
+      }
+
+      const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
+      return lastId;
+    },
   });
-  };
+};
 
 export const useCreatePost = () => {
   const queryClient = useQueryClient();

@@ -19,6 +19,8 @@ import { useToast } from "@/components/ui/use-toast";
 import {
   useCreateUserAccount,
   useSignInAccount,
+  useUserConfirmation,
+  useUserVerification,
 } from "@/lib/react-query/queriesAndMutation";
 
 import { SignupValidation } from "@/lib/validation";
@@ -29,8 +31,12 @@ const SignupForm = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const { checkAuthUser } = useUserContext();
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
+    useCreateUserAccount();
+  const { mutateAsync: signInAccount } = useSignInAccount();
+  const { mutateAsync: userVerification } = useUserVerification();
+  const { mutateAsync: userConfirmation } = useUserConfirmation();
 
-  // 1. Define your form.
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
     defaultValues: {
@@ -41,16 +47,7 @@ const SignupForm = () => {
     },
   });
 
-  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
-    useCreateUserAccount();
-
-  const { mutateAsync: signInAccount } =
-    useSignInAccount();
-
-  // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     const newUser = await createUserAccount(values);
 
     if (!newUser) {
@@ -66,12 +63,23 @@ const SignupForm = () => {
       toast({
         title: "Something went wrong.Please login your new account",
       });
+    }
+    const promise = await userVerification();
 
-      navigate("/sign-in");
-
-      return;
+    if (!promise) {
+      return toast({ title: "Verification failed. Please try again." });
     }
 
+    const confirmation = await userConfirmation();
+
+    if (confirmation) {
+      console.log("user is verified");
+      navigate("/");
+    }
+
+    if (!confirmation) {
+      return toast({ title: "confirmation failed. Please try again." });
+    }
     const isLoggedin = await checkAuthUser();
 
     if (isLoggedin) {
@@ -109,7 +117,7 @@ const SignupForm = () => {
                     placeholder="Email"
                   />
                 </FormControl>
-                <FormMessage className="shad-form_message"/>
+                <FormMessage className="shad-form_message" />
               </FormItem>
             )}
           />
@@ -127,7 +135,7 @@ const SignupForm = () => {
                     placeholder="Name"
                   />
                 </FormControl>
-                <FormMessage className="shad-form_message"/>
+                <FormMessage className="shad-form_message" />
               </FormItem>
             )}
           />
@@ -145,7 +153,7 @@ const SignupForm = () => {
                     placeholder="Username"
                   />
                 </FormControl>
-                <FormMessage className="shad-form_message"/>
+                <FormMessage className="shad-form_message" />
               </FormItem>
             )}
           />
@@ -164,7 +172,7 @@ const SignupForm = () => {
                     placeholder="Password"
                   />
                 </FormControl>
-                <FormMessage className="shad-form_message"/>
+                <FormMessage className="shad-form_message" />
               </FormItem>
             )}
           />

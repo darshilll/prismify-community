@@ -63,6 +63,29 @@ export async function signInAccount(user: { email: string; password: string }) {
   }
 }
 
+export const userVerification = async () => {
+  try {
+    const promise = await account.createVerification("http://localhost:5173/");
+    console.log("verification send");
+    return promise;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const userConfirmation = async () => {
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get("userId");
+    const secret = urlParams.get("secret");
+
+    const confirmation = account.updateVerification(userId, secret);
+    return confirmation;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export async function getCurrentUser() {
   try {
     const currentAccount = await account.get();
@@ -86,7 +109,7 @@ export async function getCurrentUser() {
 
 export async function signOutAccount() {
   try {
-    const session = await account.deleteSession('current');
+    const session = await account.deleteSession("current");
 
     return session;
   } catch (error) {
