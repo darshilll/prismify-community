@@ -3,6 +3,7 @@ import Loader from "@/components/shared/Loader";
 import PostCard from "@/components/shared/PostCard";
 import UserCard from "@/components/shared/UserCard";
 import {
+  useGetCurrentUser,
   useGetRecentPosts,
   useGetUsers,
 } from "@/lib/react-query/queriesAndMutation";
@@ -21,6 +22,7 @@ const Home = () => {
     isLoading: isUserLoading,
   } = useGetUsers(10);
 
+  const { data: currentUser } = useGetCurrentUser();
   if (isErrorPosts || isErrorCreators) {
     return (
       <div className="flex flex-1">
@@ -58,11 +60,14 @@ const Home = () => {
           <Loader />
         ) : (
           <ul className="grid 2xl:grid-cols-2 gap-6">
-            {creators?.documents.map((creator) => (
-              <li key={creator?.$id}>
-                <UserCard user={creator} />
-              </li>
-            ))}
+            {creators?.documents.map(
+              (creator) =>
+                creator.$id !== currentUser?.$id && (
+                  <li key={creator?.$id}>
+                    <UserCard user={creator} />
+                  </li>
+                )
+            )}
           </ul>
         )}
       </div>
