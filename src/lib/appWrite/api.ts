@@ -4,6 +4,7 @@ import { ID, Query } from "appwrite";
 import { account, appWriteConfig, avatars, databases, storage } from "./config";
 
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
+import { toast } from "@/components/ui/use-toast";
 
 export async function createUserAccount(user: INewUser) {
   try {
@@ -68,7 +69,7 @@ export const userVerification = async () => {
     const promise = await account.createVerification(
       "https://prismifycommunity.netlify.app"
     );
-    console.log("verification send");
+    toast({ title: "Please check your gmail for verification" });
     return promise;
   } catch (error) {
     console.log(error);
@@ -81,9 +82,6 @@ export const userConfirmation = async () => {
     const userId = urlParams.get("userId");
     const secret = urlParams.get("secret");
 
-    if (!userId || !secret) {
-      throw new Error("Missing userId or secret");
-    }
     const confirmation = account.updateVerification(userId, secret);
     return confirmation;
   } catch (error) {

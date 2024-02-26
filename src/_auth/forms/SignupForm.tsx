@@ -26,16 +26,21 @@ import {
 import { SignupValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
 import Loader from "@/components/shared/Loader";
+import { useState } from "react";
 
 const SignupForm = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
-  const { checkAuthUser } = useUserContext();
+  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
   const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
     useCreateUserAccount();
-  const { mutateAsync: signInAccount } = useSignInAccount();
+  const { mutateAsync: signInAccount, isPending: isSigningInUser } =
+    useSignInAccount();
   const { mutateAsync: userVerification } = useUserVerification();
   const { mutateAsync: userConfirmation } = useUserConfirmation();
+
+  const [isCreatingAccountt, setIsCreatingAccount] = useState(false);
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -47,7 +52,7 @@ const SignupForm = () => {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof SignupValidation>) {
+  const onSubmit = async (values: z.infer<typeof SignupValidation>) => {
     const newUser = await createUserAccount(values);
 
     if (!newUser) {
@@ -64,6 +69,7 @@ const SignupForm = () => {
         title: "Something went wrong.Please login your new account",
       });
     }
+
     const promise = await userVerification();
 
     if (!promise) {
@@ -89,7 +95,23 @@ const SignupForm = () => {
     } else {
       return toast({ title: "Login failed. Please try again." });
     }
-  }
+  };
+  // const handleVerification = async () => {
+  //   try {
+  //     const promise = await userVerification();
+  //     if (promise) {
+  //       setIsEmailVerified(true);
+  //     }
+  //     toast({ title: "Please check your email to verify" });
+  //     if (!promise) {
+  //       return toast({ title: "Verification failed. Please try again." });
+  //     } else {
+  //       toast({ title: "Email verification failed. Please try again." });
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <Form {...form}>
@@ -178,9 +200,8 @@ const SignupForm = () => {
           />
 
           <Button type="submit" className="shad-button_primary">
-            {isCreatingAccount ? (
-              <div className="flex-center gap-2 ">
-                {" "}
+            {isCreatingAccount || isSigningInUser || isUserLoading ? (
+              <div className="flex-center gap-2">
                 <Loader />
               </div>
             ) : (
