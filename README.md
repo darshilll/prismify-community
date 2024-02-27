@@ -1,6 +1,6 @@
 # Prismify - Social Media Web App
 
-Prismify is a full-stack social media web application built with ReactJS (TypeScript) for the frontend and Appwrite for the backend. It serves as an Instagram clone, offering a platform for users to share photos, connect with friends, and explore content. Prismify is designed to provide a seamless user experience while leveraging modern web technologies.
+Prismify is a cutting-edge social media web application developed using React.js and TypeScript, enhanced with Tailwind CSS.Users can effortlessly share moments, connect with friends, and explore content on any device thanks to its full responsiveness
 
 ## 🧩Features
 
