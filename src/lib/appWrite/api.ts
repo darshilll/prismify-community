@@ -66,9 +66,8 @@ export async function signInAccount(user: { email: string; password: string }) {
 
 export const userVerification = async () => {
   try {
-    const promise = await account.createVerification(
-      "https://prismifycommunity.netlify.app"
-    );
+    const promise = await account.createVerification("http://localhost:5173");
+    console.log("verification send");
     toast({ title: "Please check your gmail for verification" });
     return promise;
   } catch (error) {
@@ -76,18 +75,22 @@ export const userVerification = async () => {
   }
 };
 
-export const userConfirmation = async () => {
+export async function userConfirmation() {
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get("userId");
     const secret = urlParams.get("secret");
+
+    if (!userId || !secret) {
+      return null;
+    }
 
     const confirmation = account.updateVerification(userId, secret);
     return confirmation;
   } catch (error) {
     console.log(error);
   }
-};
+}
 
 export async function getCurrentUser() {
   try {

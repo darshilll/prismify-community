@@ -39,8 +39,8 @@ const SignupForm = () => {
   const { mutateAsync: userVerification } = useUserVerification();
   const { mutateAsync: userConfirmation } = useUserConfirmation();
 
-  const [isCreatingAccountt, setIsCreatingAccount] = useState(false);
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  // const [isCreatingAccountt, setIsCreatingAccount] = useState(false);
+  // const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
