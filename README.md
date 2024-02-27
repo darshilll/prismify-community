@@ -1,4 +1,3 @@
-<img src="/assets/Images/logondtextblack.png"/>
 # Prismify - Social Media Web App
 
 Prismify is a full-stack social media web application built with ReactJS (TypeScript) for the frontend and Appwrite for the backend. It serves as an Instagram clone, offering a platform for users to share photos, connect with friends, and explore content. Prismify is designed to provide a seamless user experience while leveraging modern web technologies.
@@ -30,23 +29,13 @@ Prismify is a full-stack social media web application built with ReactJS (TypeSc
 ### Search Functionality
 - Search posts by username, name, or content.
 
-## Technologies Used
-
-### Frontend
-- ReactJS: A JavaScript library for building user interfaces.
-- TypeScript: A statically typed superset of JavaScript for building robust applications.
-- React Router: For managing application routing.
-- Axios: For making HTTP requests to the backend.
-- Material-UI: A popular React UI framework for designing responsive web applications.
-- Redux (Optional): For state management (if applicable).
-
-### Backend
-- Appwrite: An open-source backend server providing various features like authentication, database management, and file storage.
-- Node.js: A JavaScript runtime for building scalable server-side applications.
-- Express.js: A web application framework for Node.js for building RESTful APIs.
-- MongoDB: A NoSQL database for storing application data.
-- JWT (JSON Web Tokens): For secure authentication and authorization.
-
+## 👨‍💻Technologies Used
+- ReactJS
+- TypeScript
+- React Router
+- Vite
+- appwrite
+  
 ### Development Process
 1. **Planning and Design**: Define project requirements, wireframes, and database schema.
 2. **Setting Up Environment**: Install necessary dependencies and set up the development environment.
