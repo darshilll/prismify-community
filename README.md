@@ -33,18 +33,29 @@ Prismify is a full-stack social media web application built with ReactJS (TypeSc
 - ReactJS
 - TypeScript
 - React Router
+- React query
 - Vite
 - appwrite
+- Tailwind CSS
   
-### Development Process
-1. **Planning and Design**: Define project requirements, wireframes, and database schema.
-2. **Setting Up Environment**: Install necessary dependencies and set up the development environment.
-3. **Frontend Development**: Implement frontend components, user interfaces, and client-side logic using ReactJS and TypeScript.
-4. **Backend Development**: Develop RESTful APIs, integrate with Appwrite services, and manage database operations using Node.js and Express.js.
-5. **Integration and Testing**: Connect frontend and backend components, perform unit tests, and ensure system functionality.
-6. **Deployment**: Deploy the application to a hosting service like Heroku, Vercel, or AWS.
-7. **Monitoring and Maintenance**: Monitor application performance, handle bug fixes, and implement feature enhancements as needed.
+###📝 Development Process
+Began with establishing the backend infrastructure using Appwrite, creating essential functionalities such as user authentication, database management for user profiles and posts, and storage for media files.
 
-## Conclusion
+Moving to the frontend development phase, I started by crafting user authentication flows, including sign-in and sign-up pages, leveraging Appwrite's authentication services.As I progressed, I designed and implemented the layout structure comprising the sidebar, Home Feed, Explore, Creat Post ensuring consistent navigation throughout the application. With these elements in place, users could easily navigate between different sections of the app.
 
-Prismify offers a comprehensive social media platform built with modern web technologies, providing users with a rich and engaging experience for sharing moments, connecting with friends, and exploring new content. With its intuitive user interface and robust backend infrastructure, Prismify aims to revolutionize social networking in the digital age.
+I developed the functionality for creating posts, incorporating advanced features such as drag-and-drop image uploading.The home page was meticulously crafted to display user-specific posts and curated content from other users. Users gained the ability to interact with posts, including editing and deleting their own posts, fostering a dynamic and engaging user experience.
+
+Throughout the development process, rigorous testing and debugging were conducted to ensure a seamless and error-free user experience. Finally, the deployment phase involved deploying the application to a hosting service and configuring production settings for optimal performance and reliability.
+
+## 💭 How Can It Be Improved?
+- Follow Feature: Allow users to follow each other, enabling them to stay updated on each other's activities and posts.
+- Comment Section: Enable users to leave comments on posts, allowing them to engage in conversations and share their thoughts about the content.
+
+## 🚦 Running the Project
+
+To run the project in your local environment, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Run `npm install` or `yarn` in the project directory to install the required dependencies.
+3. Run `npm run start` or `yarn start` to get the project started.
+4. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
