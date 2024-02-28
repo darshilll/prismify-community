@@ -1,20 +1,19 @@
-
-# Prismify - Social Media Web App
-
-Prismify is a cutting-edge social media web application developed using React.js and TypeScript, enhanced with Tailwind CSS.Users can effortlessly share moments, connect with friends, and explore content on any device thanks to its full responsiveness
+<img src="public/assets/Images/prismify.png"/>
+Prismify is a cutting-edge social media web application developed using React.js and TypeScript, enhanced with Tailwind CSS. Users can effortlessly share moments, connect with friends, and explore content on any device thanks to its full responsiveness.
 
 ## 🧩Features
 
 ### User Authentication
-- User registration and login with Appwrite,
+- User registration and login with Appwrite.
 - Secure authentication mechanism using Appwrite's verified email users.
 
 ### Profile Management
-- User profile creation and customization
+- User profile creation and customization.
 - Profile picture upload and editing, bio and other profile information management.
   
  ### Social Features
-- Like and save posts. Explore page to discover new content and users.
+- Like and save posts.
+- Explore page to discover new content and users.
 
 ### Post Management
 - Create, edit, and delete posts.
