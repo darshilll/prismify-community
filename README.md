@@ -1,3 +1,4 @@
+
 # Prismify - Social Media Web App
 
 Prismify is a cutting-edge social media web application developed using React.js and TypeScript, enhanced with Tailwind CSS.Users can effortlessly share moments, connect with friends, and explore content on any device thanks to its full responsiveness
