@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ID, Query } from "appwrite";
-
 import { account, appWriteConfig, avatars, databases, storage } from "./config";
-
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
-import { toast } from "@/components/ui/use-toast";
 
 export async function createUserAccount(user: INewUser) {
   try {
@@ -66,16 +63,16 @@ export async function signInAccount(user: { email: string; password: string }) {
 
 export const userVerification = async () => {
   try {
-    const promise = await account.createVerification("http://localhost:5173");
-    console.log("verification send");
-    toast({ title: "Please check your gmail for verification" });
+    const promise = await account.createVerification(
+      "https://prismifycommunity.netlify.app"
+    );
     return promise;
   } catch (error) {
     console.log(error);
   }
 };
 
-export async function userConfirmation() {
+export const userConfirmation = async () => {
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get("userId");
@@ -90,7 +87,7 @@ export async function userConfirmation() {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 export async function getCurrentUser() {
   try {

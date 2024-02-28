@@ -26,7 +26,6 @@ import {
 import { SignupValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
 import Loader from "@/components/shared/Loader";
-import { useState } from "react";
 
 const SignupForm = () => {
   const { toast } = useToast();
@@ -38,9 +37,6 @@ const SignupForm = () => {
     useSignInAccount();
   const { mutateAsync: userVerification } = useUserVerification();
   const { mutateAsync: userConfirmation } = useUserConfirmation();
-
-  // const [isCreatingAccountt, setIsCreatingAccount] = useState(false);
-  // const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -71,6 +67,9 @@ const SignupForm = () => {
     }
 
     const promise = await userVerification();
+    if (promise) {
+      return toast({ title: "Please check your email for verification." });
+    }
 
     if (!promise) {
       return toast({ title: "Verification failed. Please try again." });
@@ -79,7 +78,6 @@ const SignupForm = () => {
     const confirmation = await userConfirmation();
 
     if (confirmation) {
-      console.log("user is verified");
       navigate("/");
     }
 
@@ -96,22 +94,6 @@ const SignupForm = () => {
       return toast({ title: "Login failed. Please try again." });
     }
   };
-  // const handleVerification = async () => {
-  //   try {
-  //     const promise = await userVerification();
-  //     if (promise) {
-  //       setIsEmailVerified(true);
-  //     }
-  //     toast({ title: "Please check your email to verify" });
-  //     if (!promise) {
-  //       return toast({ title: "Verification failed. Please try again." });
-  //     } else {
-  //       toast({ title: "Email verification failed. Please try again." });
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <Form {...form}>
