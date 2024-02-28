@@ -138,12 +138,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
                 Add hashtag (separated by comma " , ")
               </FormLabel>
               <FormControl>
-                <Input
-                  type="text"
-                  className="shad-input"
-                  placeholder=""
-                  {...field}
-                />
+                <Input type="text" className="shad-input" {...field} />
               </FormControl>
               <FormMessage className="shad-form_message" />
             </FormItem>
