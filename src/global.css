@@ -290,8 +290,8 @@
 
   /* Button */
   .shad-button_primary {
-    @apply bg-purple-700 hover:bg-primary-500 text-light-1  tracking-wider text-[16px] flex
-    font-sans gap-2 hover:border !important;
+    @apply bg-purple-700 hover:bg-[#874dbb] text-light-1  tracking-wider text-[16px] flex
+    font-sans gap-2  !important;
   }
 
   .shad-button_small {
@@ -310,7 +310,7 @@
     @apply text-9a9a9a;
   }
   .edit-profile {
-    @apply bg-[#9f31ff] hover:bg-[#262626] hover:border;
+    @apply bg-[#9f31ff] hover:bg-[#874dbb];
   }
   .select-computer {
     @apply bg-[#363636] hover:bg-[#262626] hover:border;
