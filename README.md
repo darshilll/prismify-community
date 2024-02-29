@@ -38,7 +38,7 @@ Prismify is a cutting-edge social media web application developed using React.js
 - appwrite
 - Tailwind CSS
   
-###📝 Development Process
+## 📝 Development Process
 Began with establishing the backend infrastructure using Appwrite, creating essential functionalities such as user authentication, database management for user profiles and posts, and storage for media files.
 
 Moving to the frontend development phase, I started by crafting user authentication flows, including sign-in and sign-up pages, leveraging Appwrite's authentication services.As I progressed, I designed and implemented the layout structure comprising the sidebar, Home Feed, Explore, Creat Post ensuring consistent navigation throughout the application. With these elements in place, users could easily navigate between different sections of the app.
