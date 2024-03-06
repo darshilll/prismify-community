@@ -21,13 +21,14 @@ const LeftSidebar = () => {
   const { user } = useUserContext();
 
   return (
-    <nav className="leftsidebar border-2 border-black border-r-gray-800 ">
-      <div className="flex flex-col gap-11">
+    <nav className="leftsidebar border-r-2  border-r-gray-800 ">
+      <div className="flex flex-col gap-8">
         <Link to="/" className="flex items-center">
           <img
             src="/assets/Images/logondtextblack.png"
             alt="logo"
             width={200}
+            className="mt-5"
           />
         </Link>
 
@@ -54,7 +55,10 @@ const LeftSidebar = () => {
                 key={link.label}
                 className={`leftsidebar-link group ${isActive}`}
               >
-                <NavLink to={link.route} className="flex gap-4 item-center p-4">
+                <NavLink
+                  to={link.route}
+                  className="flex gap-4 item-center p-4 font-semibold text-[17px]"
+                >
                   <img
                     src={link.imgURL}
                     alt={link.label}
@@ -67,13 +71,14 @@ const LeftSidebar = () => {
               </li>
             );
           })}
+
           <Button
             variant="ghost"
             className="shad-button_ghost"
             onClick={() => signOut()}
           >
             <img src="/assets/Icons/logout.svg" alt="logout" />
-            <p className="small-medium lg:base-medium">Logout</p>
+            <p className="font-semibold text-[17px] ">Logout</p>
           </Button>
         </ul>
       </div>
