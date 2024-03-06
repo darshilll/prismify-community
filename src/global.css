@@ -236,7 +236,7 @@
 
   .leftsidebar-link {
     @apply rounded-lg base-medium 
-    font-extrabold hover:bg-primary-500 transition;
+  hover:bg-primary-500 transition;
   }
 
   /* Post Card */

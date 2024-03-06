@@ -78,7 +78,7 @@ const LeftSidebar = () => {
             onClick={() => signOut()}
           >
             <img src="/assets/Icons/logout.svg" alt="logout" />
-            <p className="font-semibold text-[17px] ">Logout</p>
+            <p className="font-semibold text-[17px]">Logout</p>
           </Button>
         </ul>
       </div>
